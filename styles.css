@@ -73,7 +73,25 @@ nav img {
   flex: 0.4;
 }
 
-.nav-login-btns a {
+.nav-account {
+  position: relative;
+  font-size: 1.2em;
+  display: none;
+}
+
+.nav-account:hover .nav-account-overflow {
+  display: block;
+}
+
+.nav-account-overflow {
+  position: absolute;
+  padding: 0 0.5em;
+  padding-top: 1em;
+  display: none;
+}
+
+.nav-login-btns a,
+.nav-account a {
   text-decoration: none;
   color: #006bb3;
   transition: color 0.25s;
