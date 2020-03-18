@@ -3,6 +3,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
+const db_api = require("./utils/db_api");
 
 const authValidation = require("./authentication/authValidation");
 
@@ -57,7 +58,7 @@ app.post("/auth/login", (req, res) => {
     });
 });
 
-//Handling registration
+// Handling registration
 app.get("/auth/register", (req, res) => {
   res.sendFile(path.join(__dirname + "/authentication/register.html"));
 });
@@ -80,6 +81,16 @@ app.post("/auth/register", (req, res) => {
     })
     .catch(err => {
       res.send({ err: "Username already used!" });
+    });
+});
+
+// Fetching data from db
+app.get("/api/products", (req, res) => {
+  db_api
+    .fetchProducts(connection, req.headers.amount, req.headers.category)
+    .then(response => res.send({ response }))
+    .catch(err => {
+      console.log(err);
     });
 });
 

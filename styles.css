@@ -127,12 +127,12 @@ nav img {
   border: 1px solid #99d6ff;
   justify-content: center;
   border-radius: 0 0 0.5em 0.5em;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.25s;
 }
 
-.nav-overflow:hover {
-  opacity: 0;
+.nav-overflow-opacity {
+  opacity: 1;
 }
 
 .nav-overflow-item {
@@ -284,6 +284,11 @@ nav img {
 
 .deals-description {
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .deals-details {
@@ -298,10 +303,6 @@ nav img {
   background: #ccf5ff;
 }
 
-.vertical-line {
-  border: 0.5px solid #d9d9d9;
-  height: 400px;
-}
 /* end of deals-item */
 /* end of deals */
 
