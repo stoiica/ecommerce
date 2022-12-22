@@ -14,7 +14,7 @@
     "config": "^3.3.0",
     "express": "^4.17.1",
     "joi": "^14.3.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "minimist": "^1.2.5",
     "mysql": "^2.18.1",
     "ncu": "^0.2.1",
